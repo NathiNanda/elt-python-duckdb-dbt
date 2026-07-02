@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw_api_data
+    description: "Dados brutos de cotações de moedas salvos localmente em JSON"
+    tables:
+      - name: usd_brl
+        description: "Histórico de cotações diárias de USD para BRL"
+        config:
+          external_location: "../data/raw/USD-BRL.json"
+          
+      - name: eur_brl
+        description: "Histórico de cotações diárias de EUR para BRL"
+        config:
+          external_location: "../data/raw/EUR-BRL.json"
+          
+      - name: btc_brl
+        description: "Histórico de cotações diárias de BTC para BRL"
+        config:
+          external_location: "../data/raw/BTC-BRL.json"

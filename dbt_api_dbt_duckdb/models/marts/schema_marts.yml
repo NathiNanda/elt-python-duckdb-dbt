@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: mart_weekly_avg_rates
+    description: "Tabela agregada contendo a média semanal de compra e venda por moeda"
+    columns:
+      - name: id_semana
+        description: "Chave primária única gerada concatenando moeda e a data de início da semana"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: codigo_moeda
+        description: "Código identificador da moeda (ex: USD, EUR, BTC)"
+        data_tests:
+          - not_null
+
+      - name: inicio_semana
+        description: "Data de início da semana correspondente (sempre segunda-feira)"
+        data_tests:
+          - not_null
