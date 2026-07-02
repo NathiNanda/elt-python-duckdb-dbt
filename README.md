@@ -124,6 +124,8 @@ Você precisará do Python (3.12+) e da ferramenta de gerenciamento de dependên
 
 <img width="1913" height="863" alt="image" src="https://github.com/user-attachments/assets/b9389184-04d6-43a2-8ce6-69845fa66aa3" />
 
+<img width="1840" height="802" alt="image" src="https://github.com/user-attachments/assets/9c2aa52f-72b0-4974-bd6d-d5ad3d2c48a9" />
+
 ## 🧠 Aprendizados Chave (Tratamento de Dados de Produção)
 
 Durante o desenvolvimento deste projeto, deparou-se com um desafio clássico de APIs em produção: **inconsistência de esquemas históricos**.
