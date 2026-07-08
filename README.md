@@ -20,7 +20,7 @@ Este repositório foi construído com fins de portfólio profissional de Engenha
 
 O pipeline simula o funcionamento de uma arquitetura de dados corporativa (Bronze, Silver, Gold):
 
-<img width="1980" height="920" alt="image" src="https://github.com/user-attachments/assets/5d4ef13b-e9e8-4717-b790-aa65fbbf10b1" />
+<img width="1980" height="920" alt="image" src="https://github.com/user-attachments/assets/22ad6a16-d6d4-47a9-b2bc-23e48bfad4a2" />
 
 **Ingestão (Extract & Load):** O script Python consome o histórico de 30 dias das moedas **USD-BRL**, **EUR-BRL** e **BTC-BRL** da **AwesomeAPI**. Os dados brutos são salvos exatamente como retornados (JSON) na pasta `data/raw/` (simulando um Data Lake / Landing Zone / Bronze).
 
