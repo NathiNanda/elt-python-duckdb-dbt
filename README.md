@@ -20,29 +20,15 @@ Este repositório foi construído com fins de portfólio profissional de Engenha
 
 O pipeline simula o funcionamento de uma arquitetura de dados corporativa (Bronze, Silver, Gold):
 
-```mermaid
-graph TD
-    API["AwesomeAPI (Cotações JSON)"]
-    Ingest["Script de Ingestão (Python)"]
-    RawData["Landing Zone (data/raw/*.json)"]
-    DuckDB["Banco DuckDB (data/dev.duckdb)"]
-    Staging["dbt Staging (stg_exchange_rates)"]
-    Marts["dbt Marts (mart_weekly_avg_rates)"]
-    Query["Script de Consulta (query_db.py)"]
-    
-    API --> Ingest
-    Ingest --> RawData
-    RawData -->|Leitura Direta - DuckDB| Staging
-    Staging -->|Transformação e Limpeza| Marts
-    Marts -->|Tabela Física Materializada| DuckDB
-    DuckDB --> Query
-```
+<img width="1980" height="920" alt="image" src="https://github.com/user-attachments/assets/5d4ef13b-e9e8-4717-b790-aa65fbbf10b1" />
 
-1.  **Ingestão (Extract & Load):** O script Python consome o histórico de 30 dias das moedas **USD-BRL**, **EUR-BRL** e **BTC-BRL** da **AwesomeAPI**. Os dados brutos são salvos exatamente como retornados (JSON) na pasta `data/raw/` (simulando um Data Lake / Landing Zone / Bronze).
-2.  **Transformação (Transform):**
+**Ingestão (Extract & Load):** O script Python consome o histórico de 30 dias das moedas **USD-BRL**, **EUR-BRL** e **BTC-BRL** da **AwesomeAPI**. Os dados brutos são salvos exatamente como retornados (JSON) na pasta `data/raw/` (simulando um Data Lake / Landing Zone / Bronze).
+
+**Transformação (Transform):**
     *   **Camada Staging (Silver):** Lê os arquivos JSON de forma direta usando as capacidades colunares do DuckDB (`read_json_auto`). Limpa, padroniza as colunas e converte strings em tipos numéricos e temporais corretos.
     *   **Camada Marts (Gold):** Calcula a média semanal das cotações agrupando por moeda e início da semana (segunda-feira).
-3.  **Qualidade de Dados (Data Quality):** Testes automatizados do dbt garantem que a surrogate key gerada seja única e que campos críticos (como taxas de compra e datas) nunca sejam nulos.
+    
+**Qualidade de Dados (Data Quality):** Testes automatizados do dbt garantem que a surrogate key gerada seja única e que campos críticos (como taxas de compra e datas) nunca sejam nulos.
 
 ---
 
